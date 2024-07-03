@@ -1,7 +1,7 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "main": "private.js",
+  "main": "main.js",
   "dependencies": {
     "denque": "^2.1.0",
     "generate-function": "^2.3.1",
