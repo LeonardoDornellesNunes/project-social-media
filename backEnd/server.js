@@ -1,9 +1,7 @@
-const http = require("node:http");
-const rotes = require("./routing.js");
+const routing = require("./routing.js");
+const express = require("express");
+const app = express();
 
-const serverConnection = http.createServer((req, res) => {
-    res.write("Server On");
-    res.end();
-});
+app.use(routing);
 
-serverConnection.listen(3000, () => console.log("server on"));
+app.listen(3000, () => console.log("Server On"));
