@@ -1,22 +1,34 @@
 const path = require("node:path");
 const express = require("express");
-const router = express.Router();
+const routerMainHomePage = express.Router();
+const routerLoginPage = express.Router();
 const app = express();
 
-router.get("/", (req, res,) => {
-    res.sendFile(path.resolve(__dirname, "../frontEnd") + "/mainHomePage/index.html");
+routerMainHomePage.get("/", (req, res,) => {
+    res.sendFile(path.resolve(__dirname, "../frontEnd") + "/homePage/indexHomePage.html");
 });
 
-router.get("/style.css", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "../frontEnd") + "/mainHomePage/style.css");
+routerMainHomePage.get("/styleHomePage.css", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "../frontEnd") + "/homePage/styleHomePage.css");
 });
 
-router.get("/main.js", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "../frontEnd") + "/mainHomePage/main.js");
+routerMainHomePage.get("/mainHomePage.js", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "../frontEnd") + "/homePage/mainHomePage.js");
 });
 
-router.get("/login", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "../frontEnd") + "/loginPage/index.html");
+routerLoginPage.get("/login", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "../frontEnd") + "/loginPage/indexLoginPage.html");
 });
 
-module.exports = router;
+routerLoginPage.get("/styleLoginPage.css", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "../frontEnd") + "/loginPage/styleLoginPage.css");
+});
+
+routerLoginPage.get("/mainLoginPage.js", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "../frontEnd") + "/loginPage/mainLoginPage.js");
+});
+
+module.exports = {
+    routerMainHomePage: routerMainHomePage,
+    routerLoginPage: routerLoginPage,
+};
