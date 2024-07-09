@@ -7,7 +7,14 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Login Page</h1>
+    <form action="/loginAuthentication" method="post">
+        <h1>Login Page</h1>
+        <label for="loginName">User Name</label>
+        <input name="loginName" class="loginName" type="text">
+        <label for="loginPassword">Password</label>
+        <input name="loginPassword" type="password" class="loginPassword">
+        <button type="submit" class="loginButton">Login</button>
+    </form>
     <script src="./mainLoginPage.js"></script>
 </body>
 </html>
